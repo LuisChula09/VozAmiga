@@ -1,0 +1,173 @@
+/* Estilo general de la página */
+body {
+  background-color: #e6f0fa;
+  /* Fondo azul claro */
+  font-family: 'Segoe UI', sans-serif;
+  /* Fuente moderna y legible */
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal del chat */
+.chat-container {
+  max-width: 600px;
+  /* Ancho máximo del contenedor */
+  margin: 40px auto;
+  /* Centrado horizontal con margen vertical */
+  background-color: #ffffff;
+  /* Fondo blanco del área de chat */
+  padding: 30px 25px;
+  /* Espaciado interno */
+  border-radius: 12px;
+  /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Sombra suave alrededor */
+}
+
+/* Título principal */
+h2 {
+  text-align: center;
+  color: #0b3d91;
+  /* Azul oscuro para el título */
+  margin-bottom: 20px;
+}
+
+/* Estilo de la alerta informativa */
+.alerta {
+  background-color: #dbeafe;
+  /* Fondo celeste claro */
+  border-left: 5px solid #48f5d8;
+  /* Barra azul lateral */
+  padding: 10px 15px;
+  color: #151616;
+  /* Azul fuerte para el texto */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Área de visualización del chat */
+#chat {
+  background-color: #f8fafc;
+  /* Fondo neutro del área de mensajes */
+  border: 1px solid #cbd5e1;
+  /* Borde gris azulado */
+  padding: 20px;
+  height: 250px;
+  /* Altura fija con scroll */
+  overflow-y: auto;
+  /* Habilita scroll vertical si hay muchos mensajes */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Espaciado general entre párrafos */
+p {
+  margin: 8px 0;
+}
+
+/* Mensajes del usuario (color azul oscuro y texto blanco) */
+.user-message {
+  background-color: #1d4ed8;
+  /* Azul fuerte */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 90%;
+  /* Limita el ancho para no ocupar todo el espacio */
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+/* Mensajes del bot (color claro con borde izquierdo) */
+.bot-message {
+  background-color: #e0f2fe;
+  /* Celeste muy claro */
+  color: #1e3a8a;
+  /* Azul oscuro */
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 90%;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+/* Estilo de la etiqueta del campo de texto */
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #1e3a8a;
+}
+
+/* Estilo del área donde el usuario escribe */
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #94a3b8;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  resize: none;
+  /* Desactiva la opción de redimensionar el área de texto */
+}
+
+/* Estilo del botón de enviar 
+button {
+  
+  background-color: #1d4ed8;
+  Azul fuerte 
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}*/
+
+/* Efecto visual cuando el botón es presionado o se pasa el cursor */
+button:hover {
+  background-color: #257175;
+  /* Azul aún más fuerte */
+}
+
+/* Estilo del mensaje “escribiendo...” */
+#typing {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #64748b;
+  /* Gris azulado */
+  font-style: italic;
+  display: none;
+}
+
+
+.mensaje_bot {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #2e8b90;
+}
+
+.placeholder_chat {
+  font-size: 1.2em;
+}
+
+.label_chat {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.button_chat {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  padding: 0.6em 1.2em;
+  background-color: #2e8b90;
+  color: white;
+  border: none;
+
+  border-radius: 8px;
+  cursor: pointer;
+}

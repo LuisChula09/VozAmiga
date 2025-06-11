@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma como español -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- Codificación para caracteres en español -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Adaptabilidad en dispositivos móviles -->
+  <title>Asistente para Adultos Mayores</title> <!-- Título que se muestra en la pestaña del navegador -->
+  <link rel="stylesheet" href="CSS/style.css" /> <!-- Conexión al archivo de estilos CSS -->
+</head>
+
+<body>
+  <div class="chat-container"> <!-- Contenedor principal del chat con diseño en CSS -->
+
+    <h2>Voz Amiga - Tu asistente Amigable</h2> <!-- Encabezado del sitio -->
+
+    <p class="alerta"> <!-- Alerta informativa al usuario -->
+      VozAmiga es una herramienta de apoyo informativo.
+      No reemplaza la atención médica o profesional.
+      Ante una emergencia, comunícate con servicios de salud o emergencia locales.
+    </p>
+
+
+    <div id="chat"></div> <!-- Área donde se mostrarán los mensajes -->
+
+    <!-- Animación de escritura del bot -->
+    <p id="typing" aria-live="polite">
+      VozAmiga está escribiendo<span id="dots">.</span></p>
+    <p class="mensaje_bot">
+      ¡Hola! Soy VozAmiga, tu asistente virtual. Estoy aquí para ayudarte con tus dudas sobre salud, recordatorios y
+      actividades diarias.
+    </p>
+    <label for="input" class="label_chat">Hazme una pregunta o dime en qué puedo
+      ayudarte:</label>
+    <textarea id="input" aria-label="Campo de texto para escribir tu pregunta"
+      placeholder="Ej. ¿Para qué sirve el paracetamol?" rows="3" class="placeholder_chat"></textarea>
+
+    <button onclick="enviarMensaje()" class="button_chat" aria-label="Enviar mensaje">
+      Enviar
+    </button>
+  </div>
+
+  <script src="js/script.js"></script> <!-- Conexión al archivo JavaScript -->
+</body>
+
+</html>
