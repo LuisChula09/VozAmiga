@@ -1,3 +1,5 @@
+
+let historialConversacion = [];
 // Esta función agrega un nuevo mensaje al área del chat
 function agregarAlChat(remitente, mensaje) {
   const chat = document.getElementById("chat"); // Obtiene el contenedor del chat
@@ -17,6 +19,8 @@ function agregarAlChat(remitente, mensaje) {
 
   // Hace scroll automático hacia abajo
   chat.scrollTop = chat.scrollHeight;
+  // Guarda el mensaje en el historial de conversación
+  historialConversacion.push({ remitente, mensaje });
 }
 
 // Variable global para el intervalo de animación de los puntos suspensivos
@@ -66,4 +70,28 @@ async function enviarMensaje() {
     clearInterval(dotsInterval);
     typing.style.display = "none";
   }
+}
+// función para generar el PDF de la conversación 
+// sin implementar en la app principal, pero disponible para uso futuro
+async function generarPDFConversacion() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  let y = 10; // posición vertical
+
+  historialConversacion.forEach(({ remitente, mensaje }) => {
+    const texto = `${remitente}: ${mensaje}`;
+    const lineas = doc.splitTextToSize(texto, 180);
+
+    if (y + lineas.length * 10 > 280) {
+      doc.addPage();
+      y = 10;
+    }
+
+    doc.text(lineas, 10, y);
+    y += lineas.length * 10;
+  });
+
+  const fecha = new Date().toISOString().split("T")[0];
+  doc.save(`conversacion_${fecha}.pdf`);
 }
