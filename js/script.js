@@ -52,15 +52,18 @@ async function enviarMensaje() {
     const respuesta = await fetch('http://localhost:3000/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: mensajeUsuario })
+      body: JSON.stringify({
+        message: mensajeUsuario,
+        history: historialConversacion
+      })
     });
 
     // Convierte la respuesta en JSON y extrae el texto generado
     const data = await respuesta.json();
     const mensajeIA = data.response.trim();
-
-    // Agrega la respuesta del bot al chat
     agregarAlChat("VozAmiga", mensajeIA);
+    historialConversacion.push({ remitente: "VozAmiga", mensaje: mensajeIA });
+
   } catch (error) {
     agregarAlChat("VozAmiga",
       "Lo siento, no pude responder en este momento. Intenta nuevamente en unos minutos. " +
